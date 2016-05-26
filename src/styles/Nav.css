@@ -1,0 +1,32 @@
+/*  nav  */
+.navbar-inverse .navbar-nav>li>a, .navbar-nav>li {
+  margin-bottom: 0;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-nav>li>a {
+  border-bottom: 3px solid #222;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover,
+.navbar-inverse .navbar-nav>li>a:active,
+.navbar-inverse .navbar-nav>li.activeItem a,
+.navbar-inverse .navbar-nav>li>a.activeItem {
+  border-bottom: 3px solid #cc7a6f;
+  color: #fff;
+  background-color: #544E4E;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #F9E4DD;
+  white-space: nowrap;
+  font-size: 1.5em;
+  font-weight: bold;
+  position: absolute;
+  background-image: -webkit-linear-gradient(92deg,#E4C0AB,#FFCB84);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
