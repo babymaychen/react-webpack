@@ -1,1 +1,117 @@
 /*  technologyList  */
+body {
+  background-color: #F7F7F7;
+}
+div#technologyList {
+	margin: 20px auto;
+}
+section.technology {
+	float: left;
+    clear: both;
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    background: #fff;
+    border: 1px solid #E9E9E9;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.techTitle span {
+	font-size: 2em;
+	font-family: kaiti, "ff-tisa-web-pro-2", "Lucida Grande", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-weight: 700;
+}
+
+.techInfo {
+	color: #c1c0c0;
+	font-size: .9em;
+	padding: 9px 0;
+}
+
+.techInfo .glyphicon {
+	font-size: 1.2em;
+	top: 2px;
+}
+
+.timeContent, .commentContent {
+	padding: 0 10px;
+	font-size: 1em;
+}
+
+.commentsSpan {
+	margin-left: 20px;
+}
+
+.techContent p {
+	line-height: 1.7em;
+}
+
+.readMoreBtn {
+	float: right;
+}
+
+/*    sideBar    */
+section.sideBar {
+	float: left;
+	clear: both;
+	width: 100%;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 45px;
+	padding-bottom: 45px;
+	background: #fff;
+	border: 1px solid #E9E9E9;
+	border-radius: 10px;
+}
+
+.selfImage {
+	width: 40%;
+	margin: 0 30%;
+}
+
+.selfIntroContent {
+	font-size: 1em;
+	font-family: kaiti;
+	color: #333;
+	line-height: 1.7em;
+	padding: 15px 0;
+}
+
+.sideBarNav ul.bs-docs-sidebar li {
+	list-style: none;
+    float: left;
+    clear: both;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.sideBarNav ul.bs-docs-sidebar li a {
+	color: rgba(109, 62, 3, 0.68);
+}
+
+.sideBarNav ul.bs-docs-sidebar li a:hover {
+	text-decoration: none;
+	color: rgb(109, 62, 3);
+	font-weight: 700;
+}
+
+ul.bs-docs-sidebar {
+	padding-left: 0;
+	padding-top: 20px;
+}
+
+.sideBarNavTitle {
+	font-size: 1.3em;
+	color: rgba(117, 21, 29, 0.61);
+	font-weight: 700;
+	line-height: 3em;
+}
+
+.sideBarComment {
+	float: right;
+}

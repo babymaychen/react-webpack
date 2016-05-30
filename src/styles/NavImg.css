@@ -1,17 +1,16 @@
 /* *********NavImg animation********** */
-#navImg {
+.iconAnim {
+  background-color: #333;
   position: relative;
   height: 300px;
   background-size: cover;
   background: url("../images/bgGirl.png");
 }
-.iconAnim {
-  background-color: #333;
-}
 img {
   width:100%;height:100%;
 }
 .icon {
+  z-index: 1000;
   width: 100px;
   height: 100px;
   position:absolute; 
@@ -22,6 +21,7 @@ img {
   animation:spin 4s linear;
 }
 .enIcon {
+  z-index: 1000;
   width: 100px;
   height: 100px;
   position:absolute; 
@@ -33,6 +33,7 @@ img {
 }
 
 .title {
+  z-index: 1000;
   color: #f35626;
   font-family: KaiTi;
   white-space: nowrap;
@@ -40,7 +41,7 @@ img {
   position:absolute; 
   font-weight: bold;
   opacity: 0;
-  bottom: 100px;
+  top: 160px;
   background-image: -webkit-linear-gradient(92deg,#f35626,#885A1D);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

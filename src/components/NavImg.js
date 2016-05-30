@@ -19,6 +19,7 @@ class NavImgComponent extends React.Component {
         </div>
         <span className="title">前端工程师养成记</span>
         </div>
+        {this.props.children}
       </div>
     );
   }
