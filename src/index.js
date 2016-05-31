@@ -1,8 +1,6 @@
 import 'core-js/fn/object/assign';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Nav from './components/Nav';
-import NavImg from './components/NavImg';
 import Router from './components/Router';
 
 // Render the main component into the dom

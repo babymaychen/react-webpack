@@ -19,7 +19,7 @@ class NavComponent extends React.Component {
         <Navbar inverse fixedTop>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">孙小妹的博客</a>
+              <a href="#">孙小妹_个人博客</a>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
@@ -36,7 +36,7 @@ class NavComponent extends React.Component {
               <NavItem onClick={this.handleAcitveCss} eventKey={5} href="#">关于博主</NavItem>
             </Nav>
           </Navbar.Collapse>
-          {this.props.children}
+          
         </Navbar>
     );
   }

@@ -9,14 +9,17 @@ section.technology {
 	float: left;
     clear: both;
     width: 100%;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 45px;
-    padding-bottom: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 25px;
     background: #fff;
     border: 1px solid #E9E9E9;
     border-radius: 10px;
     margin-bottom: 30px;
+    -webkit-box-shadow: 10px 10px 30px -20px rgba(128,114,128,1);
+    -moz-box-shadow: 10px 10px 30px -20px rgba(128,114,128,1);
+    box-shadow: 10px 10px 30px -20px rgba(128,114,128,1);
 }
 
 .techTitle span {
@@ -36,12 +39,12 @@ section.technology {
 	top: 2px;
 }
 
-.timeContent, .commentContent {
+.timeContent, .commentContent, .readContent {
 	padding: 0 10px;
 	font-size: 1em;
 }
 
-.commentsSpan {
+.commentsSpan, .readSpan {
 	margin-left: 20px;
 }
 
@@ -85,19 +88,21 @@ section.sideBar {
     float: left;
     clear: both;
     margin-bottom: 10px;
-    padding-bottom: 10px;
     width: 100%;
     border-bottom: 1px solid #f2f2f2;
 }
 
 .sideBarNav ul.bs-docs-sidebar li a {
-	color: rgba(109, 62, 3, 0.68);
+	color: rgba(46, 46, 46, 0.48);
 }
 
-.sideBarNav ul.bs-docs-sidebar li a:hover {
+.sideBarNav ul.bs-docs-sidebar li:hover {
+	cursor: pointer;
+}
+
+.sideBarNav ul.bs-docs-sidebar li:hover a {
 	text-decoration: none;
-	color: rgb(109, 62, 3);
-	font-weight: 700;
+	color: rgb(46, 46, 46);
 }
 
 ul.bs-docs-sidebar {
@@ -109,9 +114,24 @@ ul.bs-docs-sidebar {
 	font-size: 1.3em;
 	color: rgba(117, 21, 29, 0.61);
 	font-weight: 700;
-	line-height: 3em;
+	line-height: 2em;
 }
 
 .sideBarComment {
 	float: right;
+}
+
+.readMoreBtn .btn-primary {
+	background-image: -webkit-linear-gradient(top,#CC7A6F 0,rgba(187, 106, 95, 0.5) 100%);
+    background-image: -o-linear-gradient(top,#CC7A6F 0,rgba(187, 106, 95, 0.5) 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#CC7A6F),to(rgba(187, 106, 95, 0.5)));
+    background-image: linear-gradient(to bottom,#CC7A6F 0,rgba(187, 106, 95, 0.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff265a88', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    background-repeat: repeat-x;
+    border-color: #E2D2CE;
+}
+
+.readMoreBtn .btn-primary:focus, .readMoreBtn .btn-primary:hover {
+	background-color: rgba(169, 73, 71, 0.93);
 }

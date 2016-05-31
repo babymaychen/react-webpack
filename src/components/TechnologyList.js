@@ -2,13 +2,14 @@ require('normalize.css/normalize.css');
 require('styles/TechnologyList.css');
 
 import React from 'react';
-import { Grid, Row, Col, Button, Image, Nav, NavItem } from 'react-bootstrap';
+import { Grid, Row, Col, Image } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 let mayImage = require('../images/mayImage.png');
 
 class TechnologyListComponent extends React.Component {
   render() {
-    var mapData = ['css', 'javascript', 'react'];
+    var mapData = ['css', 'javascript', 'react', 'ddd', 'webpack'];
     var commentNodes = mapData.map(function(comment) {
       return (
         <TechnologyComponent url={comment} key={comment}/>
@@ -18,7 +19,7 @@ class TechnologyListComponent extends React.Component {
       <Grid>
           <Row className="show-grid">
             <Col xs={12} md={8}>
-              {commentNodes}
+              {this.props.children || commentNodes}
             </Col>
             <Col className="hidden-xs hidden-sm" xs={6} md={4}>
               <SideBarComponent />
@@ -43,7 +44,11 @@ class TechnologyComponent extends React.Component {
           </span>
           <span className="commentsSpan">
             <span className="glyphicon glyphicon-comment"></span>
-            <span className="commentContent">2</span>
+            <span className="commentContent">评论(2)</span>
+          </span>
+          <span className="readSpan">
+            <span className="glyphicon glyphicon-eye-open"></span>
+            <span className="readContent">12人阅读</span>
           </span>
         </div>
         <div className="techContent">
@@ -52,7 +57,9 @@ class TechnologyComponent extends React.Component {
           </p>
         </div>
         <div className="readMoreBtn">
-          <Button>详细阅读</Button>
+          <LinkContainer to='technologyList/technologyContent'>
+            <a role="button" className="btn btn-primary">阅读全文</a>
+          </LinkContainer>
         </div>
       </section>
     )
@@ -83,7 +90,7 @@ class SideBarNavComponent extends React.Component {
     return (
       <div className="sideBarNav">
         <hr/>
-        <span className="sideBarNavTitle">最受欢迎文章</span>
+        <span className="sideBarNavTitle">热评文章</span>
         <ul className="bs-docs-sidebar" bsStyle="pills">
           <li>
             <a href="#">

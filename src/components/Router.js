@@ -1,19 +1,25 @@
 import React from 'react'
-import { Router, Route, Link, IndexRoute } from 'react-router'
+import { Router, Route, IndexRoute, useRouterHistory } from 'react-router'
+import createBrowserHistory from 'history/lib/createBrowserHistory'
 
 import MainContent from './MainContent'
 import TechnologyList from './TechnologyList'
+import TechnologyContent from './TechnologyContent'
+
+const history = useRouterHistory(createBrowserHistory)({ queryKey: false });
 
 class RouterComponent extends React.Component {
 	render() {
 	  return (
-	        <Router>
+	        <Router history={history}>
 	            <Route path="/" component={MainContent}>
 	            	<IndexRoute component={TechnologyList} />
+	            	{/*<Route path="technologyContent" component={TechnologyContent} />*/}
 	            	<Route path="technologyList" component={TechnologyList}>
+	            		<Route path="technologyContent" component={TechnologyContent} />
 	            	</Route>
 	            </Route>
-	          </Router>
+	        </Router>
 	  );
 	}
 }
