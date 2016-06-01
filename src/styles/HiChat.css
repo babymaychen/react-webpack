@@ -1,0 +1,77 @@
+/*  HiChat  */
+.hiChat {
+	position: relative;
+}
+
+.hiChat iframe {
+	width: 60%;
+	height: 1000px;
+	margin: 5% 20%;
+	border-style: none;
+}
+
+.chatIntroImg {
+	width: 50px;
+	animation: bounce 2s ease-out;
+	-webkit-animation: bounce 2s ease-out;
+}
+
+.chatIntroContent {
+	position: absolute;
+	font-size: 1.2em;
+	top: 17px;
+	font-weight: 700;
+}
+
+@-webkit-keyframes bounce {
+	from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+ 0% {-webkit-transform: translateY(0) rotate(0deg);}
+ 20%, 50%, 80% {-webkit-transform: translateY(0);} 
+ 40% {-webkit-transform: translateY(-50px);}
+ 60% {-webkit-transform: translateY(-35px);}
+ 100% {-webkit-transform: translateY(0) rotate(360deg);}
+}
+ 
+@-moz-keyframes bounce {
+	0% {-moz-transform: translateY(0) rotate(0deg);}
+	20%, 50%, 80% {-moz-transform: translateY(0);} 
+	40% {-moz-transform: translateY(-50px);}
+	60% {-moz-transform: translateY(-35px);}
+	100% {-moz-transform: translateY(0) rotate(360deg);}
+}
+ 
+@-o-keyframes bounce {
+	0% {-o-transform: translateY(0) rotate(0deg);}
+	20%, 50%, 80% {-o-transform: translateY(0);} 
+	40% {-o-transform: translateY(-50px);}
+	60% {-o-transform: translateY(-35px);}
+	100% {-o-transform: translateY(0) rotate(360deg);}
+}
+@keyframes bounce {
+	from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+	0% {transform: translateY(0) rotate(0deg);}
+	20%, 50% {transform: translateY(0);}
+	40% {transform: translateY(-50px);}
+	60% {transform: translateY(-15px);}
+	80% {transform: translateY(-5px);} 
+	100% {transform: translateY(0) rotate(360deg);}
+}
+
+@media only screen and (max-width: 400px) {
+	.chatIntroContent {
+		font-size: .9em;
+		top: 0;
+	}
+
+	.hiChat iframe {
+		width: 100%;
+		height: 700px;
+		margin: 0;
+	}
+}

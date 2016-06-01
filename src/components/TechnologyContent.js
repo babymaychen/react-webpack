@@ -2,7 +2,6 @@ require('normalize.css/normalize.css');
 require('styles/TechnologyContent.css');
 
 import React from 'react';
-import { History } from 'react-router'
 import { Breadcrumb } from 'react-bootstrap';
 
 class TechnologyContentComponent extends React.Component {

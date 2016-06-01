@@ -11,6 +11,12 @@
   border-bottom: 3px solid #222;
 }
 
+.navbar-inverse .navbar-nav>li.active>a {
+  border-bottom: 3px solid #cc7a6f;
+  color: #fff;
+  background-color: #544E4E;
+}
+
 .navbar-inverse .navbar-nav>li>a:hover,
 .navbar-inverse .navbar-nav>li>a:active,
 .navbar-inverse .navbar-nav>li.activeItem a,
