@@ -1,18 +1,39 @@
 require('normalize.css/normalize.css');
 require('styles/TechnologyList.css');
+var superagent = require('superagent');
 
 import React from 'react';
 import { Grid, Row, Col, Image } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
+/*import { mongoose } from 'mongoose';*/
+/*import Technology from '../stores/model/Technology';*/
+
 let mayImage = require('../images/mayImage.png');
 
 class TechnologyListComponent extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+          technologyList: []
+      };
+  }
+  componentWillMount() {
+    superagent.get('http://localhost:8001/getTechnologyList')
+      .accept('json')
+      .end(function(err, res){
+        if (err) throw err;
+
+        this.setState({technologyList: res.body});
+        console.log(res.body);
+
+    }.bind(this));
+  }
   render() {
-    var mapData = ['css', 'javascript', 'react', 'ddd', 'webpack'];
-    var commentNodes = mapData.map(function(comment) {
+    var technologyList = this.state.technologyList;
+    var commentNodes = technologyList.map(function(comment) {
       return (
-        <TechnologyComponent url={comment} key={comment}/>
+        <TechnologyComponent data={comment} key={comment._id}/>
       );
     });
     return (
@@ -33,31 +54,31 @@ class TechnologyListComponent extends React.Component {
 class TechnologyComponent extends React.Component {
   render() {
     return (
-      <section className="technology" id={this.props.url}>
+      <section className="technology" id={this.props.data._id}>
         <div className="techTitle">
-          <span>孙小妹技术贴标题</span>
+          <span>{this.props.data.title}</span>
         </div>
         <div className="techInfo">
           <span className="dateSpan">
             <span className="glyphicon glyphicon-time"></span>
-            <span className="timeContent">2016.5.27</span>
+            <span className="timeContent">{this.props.data.createtime.slice(0, 10)}</span>
           </span>
           <span className="commentsSpan">
             <span className="glyphicon glyphicon-comment"></span>
-            <span className="commentContent">评论(2)</span>
+            <span className="commentContent">评论({this.props.data.commentnum})</span>
           </span>
           <span className="readSpan">
             <span className="glyphicon glyphicon-eye-open"></span>
-            <span className="readContent">12人阅读</span>
+            <span className="readContent">{this.props.data.viewnum}人阅读</span>
           </span>
         </div>
         <div className="techContent">
           <p>
-            Apps - Mac 浏览器 Google Chrome Firefox Opera Safari Safari Technology Preview 编辑图片 Pixelmator Skitch Polarr Photo Editor 3 原型设计 Sketch Adobe Creative Cloud PhotoShop Lightroom »
+            {this.props.data.listcontent}
           </p>
         </div>
         <div className="readMoreBtn">
-          <LinkContainer to='technologyList/technologyContent'>
+          <LinkContainer to={`technologyList/technologyContent/${this.props.data._id}`}>
             <a role="button" className="btn btn-primary">阅读全文</a>
           </LinkContainer>
         </div>

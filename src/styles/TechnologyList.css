@@ -6,6 +6,7 @@ div#technologyList {
 	margin: 20px auto;
 }
 section.technology {
+	font-family: "Merriweather", serif, "ff-tisa-web-pro-2", "Lucida Grande", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 	float: left;
     clear: both;
     width: 100%;
@@ -24,8 +25,6 @@ section.technology {
 
 .techTitle span {
 	font-size: 2em;
-	font-family: kaiti, "ff-tisa-web-pro-2", "Lucida Grande", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	font-weight: 700;
 }
 
 .techInfo {
@@ -46,6 +45,10 @@ section.technology {
 
 .commentsSpan, .readSpan {
 	margin-left: 20px;
+}
+
+.techContent {
+	margin: 10px 0;
 }
 
 .techContent p {

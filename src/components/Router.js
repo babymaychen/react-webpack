@@ -17,7 +17,7 @@ class RouterComponent extends React.Component {
 	            	<IndexRoute component={TechnologyList} />
 	            	{/*<Route path="technologyContent" component={TechnologyContent} />*/}
 	            	<Route path="technologyList" component={TechnologyList}>
-	            		<Route path="technologyContent" component={TechnologyContent} />
+	            		<Route path="technologyContent/:id" component={TechnologyContent} />
 	            	</Route>
 	            	<Route path="hiChat" component={HiChat}>
 	            	</Route>

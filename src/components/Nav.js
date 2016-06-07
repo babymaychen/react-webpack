@@ -16,7 +16,7 @@ class NavComponent extends React.Component {
           <Navbar.Collapse>
             <Nav pullRight>
               <LinkContainer to='/technologyList'>
-                <NavItem eventKey={1} href="#">技术秘籍</NavItem>
+                <NavItem active eventKey={1} href="#">技术秘籍</NavItem>
               </LinkContainer>
               <LinkContainer to='/record'>
                 <NavItem eventKey={2}>生活点滴</NavItem>

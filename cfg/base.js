@@ -23,12 +23,18 @@ module.exports = {
     contentBase: './src/',
     historyApiFallback: true,
     hot: true,
+    proxy: {
+      "*": "http://localhost:8001"
+    },
     port: defaultSettings.port,
     publicPath: defaultSettings.publicPath,
     noInfo: false
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx', '.node'],
+    node: {
+      fs: "empty"
+    },
     alias: {
       actions: `${defaultSettings.srcPath}/actions/`,
       components: `${defaultSettings.srcPath}/components/`,
