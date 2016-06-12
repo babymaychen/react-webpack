@@ -47,12 +47,12 @@ section.technology {
 	margin-left: 20px;
 }
 
-.techContent {
-	margin: 10px 0;
-}
-
 .techContent p {
 	line-height: 1.7em;
+}
+
+.techContent blockquote {
+	font-size: 15px;
 }
 
 .readMoreBtn {

@@ -1,9 +1,9 @@
 /*eslint no-console:0 */
 'use strict';
 require('core-js/fn/object/assign');
-var TechnologyModel = require("./src/stores/model/Technology");
+var ArticleModel = require("./src/stores/model/Article");
 const mongoose = require('mongoose');
-var Technology = mongoose.model("Technology");
+var Article = mongoose.model("Article");
 const serverConfig = require('./server.config.js');
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
@@ -38,14 +38,14 @@ app.all('*',function (req, res, next) {
 });
 
 app.get("/getTechnologyList", function(req, res) {
-	Technology.find({}, function(err,obj) { 
+	Article.find({'tag' : "technology" }, function(err,obj) { 
 		res.send(obj);
 	});
 });
 
 app.get("/getTechnologyById", function(req, res) {
 	var id = req.query.id;
-	Technology.findOne({'_id' : id }, function(err,obj) { 
+	Article.findOne({'_id' : id }, function(err,obj) { 
 		res.send(obj);
 	});
 });

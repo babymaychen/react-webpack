@@ -19,13 +19,13 @@ class NavComponent extends React.Component {
                 <NavItem active eventKey={1} href="#">技术秘籍</NavItem>
               </LinkContainer>
               <LinkContainer to='/record'>
-                <NavItem eventKey={2}>生活点滴</NavItem>
+                <NavItem eventKey={2} disabled>生活点滴</NavItem>
               </LinkContainer>
-              <NavItem eventKey={3} href="#">休闲娱乐</NavItem>
+              <NavItem eventKey={3} href="#" disabled>休闲娱乐</NavItem>
               <LinkContainer to='/hiChat'>
-                <NavItem eventKey={4} href="#">沟通交流</NavItem>
+                <NavItem eventKey={4} href="#" disabled>沟通交流</NavItem>
               </LinkContainer>
-              <NavItem eventKey={5} href="#">关于博主</NavItem>
+              <NavItem eventKey={5} href="#" disabled>关于博主</NavItem>
             </Nav>
           </Navbar.Collapse>
           

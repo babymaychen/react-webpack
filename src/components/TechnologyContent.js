@@ -4,6 +4,7 @@ var superagent = require('superagent');
 
 import React from 'react';
 import { Breadcrumb } from 'react-bootstrap';
+import Markdown from 'react-remarkable';
 
 class TechnologyContentComponent extends React.Component {
   constructor(props) {
@@ -20,14 +21,13 @@ class TechnologyContentComponent extends React.Component {
       .end(function(err, res){
         if (err) throw err;
 
-        this.setState({technologyContent: res.body});
+        this.setState({technologyContent: res.body,
+                      day: res.body.time.day});
 
     }.bind(this));
   }
   render() {
     var technologyContent = this.state.technologyContent;
-    var createtime = '"'+technologyContent.createtime+'"';
-    console.log(createtime.l);
     return (
       <div className="technologyContent">
       	<Breadcrumb>
@@ -40,9 +40,9 @@ class TechnologyContentComponent extends React.Component {
       	  </Breadcrumb>
         <div className="contentContainer">
         	<span className="techTitle">{technologyContent.title}</span>
-        	<span className="techDate">{createtime.slice(1,11)}</span>
+        	<span className="techDate">{this.state.day}</span>
         	<div className="techContent">
-        		{this.state.technologyContent.content}
+        		<Markdown source={technologyContent.article} />
         	</div>
         </div>
       </div>

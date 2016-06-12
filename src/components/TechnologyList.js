@@ -5,6 +5,7 @@ var superagent = require('superagent');
 import React from 'react';
 import { Grid, Row, Col, Image } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import Markdown from 'react-remarkable';
 
 /*import { mongoose } from 'mongoose';*/
 /*import Technology from '../stores/model/Technology';*/
@@ -61,7 +62,7 @@ class TechnologyComponent extends React.Component {
         <div className="techInfo">
           <span className="dateSpan">
             <span className="glyphicon glyphicon-time"></span>
-            <span className="timeContent">{this.props.data.createtime.slice(0, 10)}</span>
+            <span className="timeContent">{this.props.data.time.day}</span>
           </span>
           <span className="commentsSpan">
             <span className="glyphicon glyphicon-comment"></span>
@@ -74,7 +75,7 @@ class TechnologyComponent extends React.Component {
         </div>
         <div className="techContent">
           <p>
-            {this.props.data.listcontent}
+            <Markdown source={this.props.data.listContent} />
           </p>
         </div>
         <div className="readMoreBtn">
